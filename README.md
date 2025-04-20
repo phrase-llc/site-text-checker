@@ -20,19 +20,19 @@
 2. スクリプトに実行権限を付与
 
     ```bash
-   chmod +x check_text.sh
+   chmod +x check.sh
     ```
 
 3. チェックしたい文字列を引数にしてスクリプトを実行
 
     ```bash
-   ./check_text.sh "探したい文字列"
+   ./check.sh "探したい文字列"
     ```
 
    結果をファイルに保存したい場合はリダイレクト
 
     ```bash
-   ./check_text.sh "探したい文字列" > result.log
+   ./check.sh "探したい文字列" > result.log
     ```
 
 ## 注意点
