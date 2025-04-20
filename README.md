@@ -8,13 +8,13 @@
 
 ## 使い方
 
-1. urls.txt を作成してURLを1行ずつ書く
+1. urls.txt を作成してチェック対象のURLを1行ずつ書く
 
    ```text
    https://example.com/page1
    https://example.com/page2
-   https://example.com/page3
-   https://example.com/page4
+   http://localhost/page3
+   http://localhost:8080/page4
    ```
 
 2. スクリプトに実行権限を付与
