@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 KEYWORD="$1"
 
@@ -13,10 +13,10 @@ if [ ! -f urls.txt ]; then
   exit 1
 fi
 
-for url in $(cat urls.txt); do
+while IFS= read -r url; do
   if curl -s "$url" | grep -q "$KEYWORD"; then
     echo "📌 Found: $url"
   else
     echo "➖ Not found: $url"
   fi
-done
+done < urls.txt
