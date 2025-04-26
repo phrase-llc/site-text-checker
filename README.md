@@ -42,6 +42,8 @@
 - ページ内のHTMLタグも対象になるので表示テキストとは異なる
 
 ## Dockerを使う場合
+- 検索対象のURLが同一ホストの別のDockerで実行されていて `urls.txt` に `http://localhost` が含まれているときは `http://host.docker.internal` に変更する必要があります。
+- Linuxで実行する場合は、`host.docker.internal` が使えないため、Dockerfileを使わず `curl` をインストールして直接実行することをお勧めします。
 - Dockerfile を使ってコンテナをビルド
 
     ```bash
@@ -52,12 +54,3 @@
     ```bash
     docker run --rm keyword-checker "探したい文字列"
      ```
-
-### Dockerの注意点
-- 検索対象のURLが別のホストで実行されていて `urls.txt` に `http://localhost` が含まれているときは `http://host.docker.internal` に変更する必要があります。
-
-   ```shell
-   sed -i 's|http://localhost|http://host.docker.internal|g' urls.txt
-   ```
-
-- Linuxで実行する場合は、`host.docker.internal` が使えないため、Dockerfileを使わず `curl` をインストールして直接実行することをお勧めします。
